@@ -1,24 +1,18 @@
+/*
+ * @描述: 
+ * @创建者: 张莹
+ * @Date: 2020-04-27 16:32:26
+ * @修改者: 张莹
+ * @LastEditTime: 2020-04-27 20:43:29
+ * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+ */
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
     </div>
   );
 }
