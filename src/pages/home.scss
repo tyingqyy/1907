@@ -1,0 +1,12 @@
+.home{
+  display: flex;
+  flex-direction: column;
+  background-color:#fff;
+
+  .main{
+    flex: 1;
+    padding:0 14px;
+    font-family: Hiragino Sans GB,sans-serif;
+    padding-bottom: 46px;
+  }
+}

@@ -1,0 +1,39 @@
+.title{
+  font-size: 16px;
+  color:#333;
+  text-align: left;
+  font-weight: bolder;
+}
+.falls{
+  margin-top: 12px;
+  display: flex;
+  ul{
+    margin-right: 10px;
+    li{
+      width: 186px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.15);
+      img{
+        width: 186px;
+      }
+      .falls-list-content{
+        padding:4px 8px;
+        text-align: left;
+        p{
+          color:#999;
+          line-height: 30px;
+        }
+        span{
+          font-weight: 700;
+          color: #f03d37;
+          line-height: 30px;
+          i{
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

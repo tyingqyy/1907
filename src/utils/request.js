@@ -31,12 +31,12 @@ const instance = axios.create({
 export const get = async (url, params = {}) => {
     return await instance.get(url, {params})
 }
-export const post = async (url, data = {}) => {``
-    return await instance.post(url, data)
-}
-export const put = async (url, data = {}) => {
-    return await instance.put(url, data)
-}
+// export const post = async (url, data = {}) => {``
+//     return await instance.post(url, data)
+// }
+// export const put = async (url, data = {}) => {
+//     return await instance.put(url, data)
+// }
 // export const del = async (url, data = {}) => {
 //     return await instance.delete(url, data)
 // }

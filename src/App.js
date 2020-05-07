@@ -8,11 +8,23 @@
  */
 import React from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route
+} from "react-router-dom";
 
+import Home from "./pages/Home";
+import Order from "./pages/Order";
+
+import BottomNav from "./components/BottomNav";
 function App() {
   return (
     <div className="App">
-     
+      <Router>
+        <Route path={"/"} exact component={Home}/>
+        <Route path={"/order"}  component={Order}/>
+        <BottomNav />
+      </Router>
     </div>
   );
 }

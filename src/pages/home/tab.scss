@@ -1,0 +1,17 @@
+.tab{
+  margin-top: 4px;
+  ul{
+    width:100%;
+    display: flex;
+    li{
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+      color:#666;
+      img{
+        width: 66px;
+        height: 66px;
+      }
+    }
+  }
+}
