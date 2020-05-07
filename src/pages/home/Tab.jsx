@@ -5,7 +5,6 @@ import "./tab.scss"
 
 
 import {getTabList} from "../../store/tab/selectors";
-// import {getTabList} from "../../store/tab";
 import {getTabData} from "../../store/tab/thunk";
 
 class Tab extends Component {

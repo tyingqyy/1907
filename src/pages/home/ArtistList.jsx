@@ -1,11 +1,21 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+
 import "./artistList.scss"
+
+import {getCelebrityData} from "../../store/celebrityBasicList/thunk";
+
 class ArtistList extends Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        const {getCelebrityList} = this.props;
+        getCelebrityList();
+    }
 
     render() {
+        const celebrityList = this.props.celebrityList;
         return (
             <React.Fragment>
                 <div className="artist-list">
@@ -13,36 +23,17 @@ class ArtistList extends Component {
                         <h3>大咖新动态</h3>
                     </div>
                     <ul>
-                        <li>
-                            <img src="https://p0.meituan.net/moviemachine/7aae576e0f96f3c95d9bd6af487e0807251825.png@100w_100h_1c_1e" alt=""/>
-                            <p>吴青峰</p>
-                            <span>演出即将开始</span>
-                        </li>
-                        <li>
-                            <img src="https://p0.meituan.net/moviemachine/7aae576e0f96f3c95d9bd6af487e0807251825.png@100w_100h_1c_1e" alt=""/>
-                            <p>吴青峰</p>
-                            <span>演出即将开始</span>
-                        </li>
-                        <li>
-                            <img src="https://p0.meituan.net/moviemachine/7aae576e0f96f3c95d9bd6af487e0807251825.png@100w_100h_1c_1e" alt=""/>
-                            <p>吴青峰</p>
-                            <span>演出即将开始</span>
-                        </li>
-                        <li>
-                            <img src="https://p0.meituan.net/moviemachine/7aae576e0f96f3c95d9bd6af487e0807251825.png@100w_100h_1c_1e" alt=""/>
-                            <p>吴青峰</p>
-                            <span>演出即将开始</span>
-                        </li>
-                        <li>
-                            <img src="https://p0.meituan.net/moviemachine/7aae576e0f96f3c95d9bd6af487e0807251825.png@100w_100h_1c_1e" alt=""/>
-                            <p>吴青峰</p>
-                            <span>演出即将开始</span>
-                        </li>
-                        <li>
-                            <img src="https://p0.meituan.net/moviemachine/7aae576e0f96f3c95d9bd6af487e0807251825.png@100w_100h_1c_1e" alt=""/>
-                            <p>吴青峰</p>
-                            <span>演出即将开始</span>
-                        </li>
+                        {
+                            celebrityList.map(v=>(
+                                <li key={v.celebrityId}>
+                                    <img src={v.headUrl} alt=""/>
+                                    <p>{v.celebrityName}</p>
+                                    <span>{v.recommendTag}</span>
+                                </li>
+                            ))
+                        }
+
+
                     </ul>
                 </div>
             </React.Fragment>
@@ -50,4 +41,12 @@ class ArtistList extends Component {
     }
 }
 
-export default ArtistList;
+const mapStateTopProps = (state) => ({
+    celebrityList: state.celebrityList.result
+
+})
+const mapDispatchToProps = (dispatch) => ({
+    getCelebrityList:() => dispatch(getCelebrityData())
+
+})
+export default connect(mapStateTopProps, mapDispatchToProps)(ArtistList);
